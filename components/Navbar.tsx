@@ -11,6 +11,20 @@ const Navbar = () => {
                 </Link>
 
                 <Image src='/hamburger-menu.svg' width={30} height={30} alt='Hamburage Menu' className='block md:hidden' />
+
+                <ul className='flex-center gap-x-3 max-md:hidden md:gap-x-10'>
+                    <li className='body-text text-gradient_blue-purple !font-bold'>
+                        <Link href='javascript:;' target='_blank'>
+                            Sign Up
+                        </Link>
+                    </li>
+
+                    <li className='body-text !font-normal'>
+                        <Link href='javascript:;' target='_blank'>
+                            Sign In
+                        </Link>
+                    </li>
+                </ul>
             </div>
         </nav>
     )
