@@ -21,6 +21,32 @@ const schema = {
             title : 'Download Link',
             type : 'url',
             validation : (Rule: any) => Rule.require()
+        },
+        {
+            name : 'views',
+            title : 'Views',
+            type : 'number',
+            initialValue : 0
+        },
+        {
+            name : 'poster',
+            title : 'Poster',
+            type : 'image',
+            validation : (Rule: any) => Rule.required(),
+            options :   {
+                hotspot : true,
+            }
+        },
+        {
+            name : 'category',
+            title : 'Category',
+            type : 'string',
+            validation : (Rule: any) => Rule.required(),
+            options: {
+                list: ['frontend', 'backend', 'next 13', 'fullstack', 'others']
+            }
         }
     ]
 }
+
+export default schema;
