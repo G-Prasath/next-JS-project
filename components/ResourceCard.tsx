@@ -6,6 +6,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import Image from "next/image";
+import Link from "next/link";
 
 
 interface Props {
@@ -18,11 +20,22 @@ interface Props {
 
 const ResourceCard = ({ id, title, image, downloadNumber, slug }: Props) => {
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card Description</CardDescription>
-            </CardHeader>
+        <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[365px]">
+            <Link href={`/resources/${id}`}>
+                <CardHeader>
+                    <div>
+                        <Image
+                            src={image}
+                            className="h-full rounded-md object-cover"
+                            width={384}
+                            height={440}
+                            alt={title}
+                        />
+                    </div>
+                    <CardTitle>Card Title</CardTitle>
+                    <CardDescription>Card Description</CardDescription>
+                </CardHeader>
+            </Link>
             <CardContent>
                 <p>Card Content</p>
             </CardContent>
